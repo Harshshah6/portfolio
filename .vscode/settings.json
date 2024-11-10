@@ -1,0 +1,8 @@
+{
+    "emmet.includeLanguages": {
+        "typescript": "javascriptreact"
+    },
+    "tailwindCSS.emmetCompletions": true,
+    "emmet.useInlineCompletions": true,
+    "tailwindCSS.experimental.configFile": null
+}
