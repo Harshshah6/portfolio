@@ -27,8 +27,6 @@ function Navbar() {
     setSelected(key.toString());
   }
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
-  console.log(selected);
   
 
   return (
