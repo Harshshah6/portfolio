@@ -15,7 +15,7 @@ interface ParticlesProps {
 export default function Particles({
 	className = "",
 	quantity = 200,
-	staticity = 100,
+	staticity = 20,
 	ease = 50,
 	refresh = false,
 }: ParticlesProps) {
@@ -171,8 +171,9 @@ export default function Particles({
 
 	const animate = () => {
 		clearContext();
-		circles.current.forEach((circle: Circle, i: number) => {
+		circles.current.forEach((value: unknown, i: number) => {
 			// Handle the alpha value
+			const circle:Circle = value as Circle;
 			const edge = [
 				circle.x + circle.translateX - circle.size, // distance from left edge
 				canvasSize.current.w - circle.x - circle.translateX - circle.size, // distance from right edge
