@@ -14,7 +14,7 @@ interface ParticlesProps {
 
 export default function Particles({
 	className = "",
-	quantity = 200,
+	quantity = 500,
 	staticity = 20,
 	ease = 50,
 	refresh = false,
@@ -87,7 +87,7 @@ export default function Particles({
 		if (canvasContainerRef.current && canvasRef.current && context.current) {
 			circles.current.length = 0;
 			canvasSize.current.w = canvasContainerRef.current.offsetWidth;
-			canvasSize.current.h = canvasContainerRef.current.offsetHeight;
+			canvasSize.current.h = canvasContainerRef.current.scrollHeight;
 			canvasRef.current.width = canvasSize.current.w * dpr;
 			canvasRef.current.height = canvasSize.current.h * dpr;
 			canvasRef.current.style.width = `${canvasSize.current.w}px`;

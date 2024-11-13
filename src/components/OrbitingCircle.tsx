@@ -108,6 +108,7 @@ const OuterCirclesItems = [
             </svg>
         ),
         delay: 0,
+        padding:true
     },
     {
         id: "git",

@@ -29,7 +29,7 @@ export default function RootLayout({
 
 
   return (
-    <html lang="en" suppressHydrationWarning className="overflow-hidden w-screen">
+    <html lang="en" suppressHydrationWarning className="overflow-x-hidden w-screen scroll-smooth">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-hidden max-w-screen`}
       >
@@ -38,7 +38,7 @@ export default function RootLayout({
           attribute="class"
           enableSystem
         >
-          <Particles className="absolute inset-0 -z-10 animate-fade-in h-screen w-screen " />
+          <Particles className="absolute inset-0 -z-10 animate-fade-in h-[500vh] w-screen" />
           {children}
         </ThemeProvider>
       </body>

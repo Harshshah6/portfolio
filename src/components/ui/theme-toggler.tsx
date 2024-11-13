@@ -9,7 +9,7 @@ export function ThemeToggler() {
 
     const { setTheme } = useTheme()
 
-    const menuItemClassName = 'px-2 border py-1 hover:cursor-pointer transistion duration-300 overflow-hidden'
+    const menuItemClassName = 'w-24 text-center px-2 border py-1 hover:cursor-pointer transistion duration-300 overflow-hidden'
 
     return (
         <div className='pr-4 rounded-md overflow-hidden'>
@@ -21,15 +21,12 @@ export function ThemeToggler() {
                         <span className="sr-only">Toggle theme</span>
                     </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align='end' className='bg-background overflow-hidden rounded-md border'>
+                <DropdownMenuContent align='end' className='mt-1 bg-background overflow-hidden rounded-md border'>
                     <DropdownMenuItem className={menuItemClassName} onClick={() => setTheme("light")}>
                         Light
                     </DropdownMenuItem>
                     <DropdownMenuItem className={menuItemClassName} onClick={() => setTheme("dark")}>
                         Dark
-                    </DropdownMenuItem>
-                    <DropdownMenuItem className={menuItemClassName} onClick={() => setTheme("system")}>
-                        System
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
