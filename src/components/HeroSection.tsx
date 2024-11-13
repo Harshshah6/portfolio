@@ -7,7 +7,7 @@ function HeroSection() {
   return (
       <section id='home' className="h-screen flex flex-row justify-center items-center container mx-auto">
           <div className="flex-1 size-full items-center justify-center flex flex-col gap-4">
-              <h1 className="text-xl md:text-2xl text-foreground/75 text-center">Hello I'am</h1>
+              <h1 className="text-xl md:text-2xl text-foreground/75 text-center">Hello I&apos;am</h1>
               <h1 className="text-4xl md:text-6xl text-center">Harsh S Shah</h1>
               <h1 className="text-2xl md:text-3xl text-foreground/90 text-center">Android App Developer</h1>
               <div className="space-x-5 items-center justify-evenly flex">

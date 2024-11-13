@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 
 function Navbar() {
 
-  let tabs = [
+  const tabs = [
     {
       id: "home",
       label: "Home",

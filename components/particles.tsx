@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import React, { useRef, useEffect } from "react";
@@ -127,7 +128,7 @@ export default function Particles({
 			context.current.translate(translateX, translateY);
 			context.current.beginPath();
 			context.current.arc(x, y, size, 0, 2 * Math.PI);
-			context.current.fillStyle = `rgba(${theme!="dark"?"0,0,0":"255,255,255"}, ${alpha})`;
+			context.current.fillStyle = `rgba(${theme != "dark" ? "0,0,0" : "255,255,255"}, ${alpha})`;
 			context.current.fill();
 			context.current.setTransform(dpr, 0, 0, dpr, 0, 0);
 
@@ -173,7 +174,7 @@ export default function Particles({
 		clearContext();
 		circles.current.forEach((value: unknown, i: number) => {
 			// Handle the alpha value
-			const circle:Circle = value as Circle;
+			const circle: Circle = value as Circle;
 			const edge = [
 				circle.x + circle.translateX - circle.size, // distance from left edge
 				canvasSize.current.w - circle.x - circle.translateX - circle.size, // distance from right edge
