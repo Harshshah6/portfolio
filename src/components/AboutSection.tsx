@@ -9,7 +9,7 @@ function AboutSection() {
               <Image width={1024} height={1024} src="/personcoding.jpg" alt='personcoding-image' className='w-1/2 rounded-md overflow-hidden'/>
         </div>
         <div className="flex-1 flex justify-center items-center flex-col gap-4">
-              <h1 className='text-4xl md:text-5xl md:place-self-start'>About Me <span className='hidden md:block text-xl text-primary/80'>{" - "}Harsh S Shah</span></h1>
+              <h1 className='text-4xl md:text-5xl md:place-self-start'>About Me <span className='hidden md:inline-block text-base text-primary/80'>{" - "}Harsh S Shah</span></h1>
               <p className='text-primary/70 font-mono '>
                   Hello I&apos;m Harsh Sandeep Shah. I&apos;m a software developer with a passion for building innovative and user-friendly applications. With a strong foundation in Java for android applications and frameworks like NextJS for websites.
                   I have knowledge in various domains like Coding Android Applicatons, Websites, Desktop Applications. I always look forward to contribute in open source repositories.

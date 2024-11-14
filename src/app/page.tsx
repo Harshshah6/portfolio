@@ -1,4 +1,5 @@
 import AboutSection from "@/components/AboutSection";
+import EducationSection from "@/components/EducationSection";
 import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
 
@@ -8,7 +9,8 @@ export default function Home() {
     <main className="flex flex-col">
       <Navbar />
       <HeroSection />
-      <AboutSection/>
+      <AboutSection />
+      <EducationSection/>
     </main>
   );
 }

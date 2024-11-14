@@ -32,7 +32,7 @@ function Navbar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 w-screen flex items-center justify-around border border-red h-12 py-6 backdrop-blur-sm">
+    <nav className="z-50 fixed top-0 left-0 right-0 w-screen flex items-center justify-around border border-red h-12 py-6 backdrop-blur-sm">
       <div className='flex-1 flex items-center pl-4 md:pl-0 md:justify-center'>
         <h1 className='font-bold text-2xl cursor-pointer'>Harsh Shah</h1>
       </div>
@@ -60,7 +60,7 @@ function Navbar() {
         (
           <div className='mr-2 transistion duration-300 animate-in slide-in-from-right-[80%] absolute right-0 top-0 h-screen bg-secondary/95 w-[70%] flex flex-col'>
             <ClearRoundedIcon className='cursor-pointer place-self-end m-4' onClick={() => { setIsDrawerOpen(!isDrawerOpen) }} />
-            <div className="items-end flex justify-end">
+            <div className="items-end flex justify-end z-10">
               <ThemeToggler />
             </div>
             <div className="flex-1 flex justify-center">
