@@ -18,7 +18,7 @@ export default function AlternateTimeline() {
                         </TimelineSeparator>
                         <TimelineContent >
                             <h1 className='text-lg font-bold'>{item.date}</h1>
-                            <p className='text-base text-secondary-foreground/50'>{item.title}</p>
+                            <p className='text-base text-secondary-foreground/40'>{item.title}</p>
                             <p>{item.description}</p>
                         </TimelineContent>
                     </TimelineItem>

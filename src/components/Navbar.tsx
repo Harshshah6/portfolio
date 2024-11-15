@@ -34,7 +34,7 @@ function Navbar() {
   return (
     <nav className="z-50 fixed top-0 left-0 right-0 w-screen flex items-center justify-around border border-red h-12 py-6 backdrop-blur-sm">
       <div className='flex-1 flex items-center pl-4 md:pl-0 md:justify-center'>
-        <h1 className='font-bold text-2xl cursor-pointer'>Harsh Shah</h1>
+        <h1 className='font-bold text-2xl cursor-pointer' onClick={() => { setSelected("home"); router.push("")}}>Harsh Shah</h1>
       </div>
       <div className="hidden flex-1 md:flex flex-col items-center justify-center">
         <div className='rounded-md'>

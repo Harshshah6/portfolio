@@ -61,6 +61,8 @@ export default function Particles({
 		if (canvasRef.current) {
 			const rect = canvasRef.current.getBoundingClientRect();
 			const { w, h } = canvasSize.current;
+			// const h = document.body.offsetHeight
+			// const w = document.body.offsetWidth
 			const x = mousePosition.x - rect.left - w / 2;
 			const y = mousePosition.y - rect.top - h / 2;
 			const inside = x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2;
@@ -87,8 +89,10 @@ export default function Particles({
 	const resizeCanvas = () => {
 		if (canvasContainerRef.current && canvasRef.current && context.current) {
 			circles.current.length = 0;
-			canvasSize.current.w = canvasContainerRef.current.offsetWidth;
-			canvasSize.current.h = canvasContainerRef.current.scrollHeight;
+			// canvasSize.current.w = canvasContainerRef.current.offsetWidth;
+			// canvasSize.current.h = canvasContainerRef.current.scrollHeight;
+			canvasSize.current.h = document.body.offsetHeight;
+			canvasSize.current.w = document.body.offsetWidth;
 			canvasRef.current.width = canvasSize.current.w * dpr;
 			canvasRef.current.height = canvasSize.current.h * dpr;
 			canvasRef.current.style.width = `${canvasSize.current.w}px`;
