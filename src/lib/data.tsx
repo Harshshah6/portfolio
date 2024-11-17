@@ -22,57 +22,57 @@ export const skills = [
 
 export const projectsData = [
     {
-        title: "ShareClip",
+        title: "Social Media App",
         description:
-            "A tool for securely sharing files and text over the internet, ensuring privacy with temporary storage and automatic deletion after a set validity period.",
-        tags: ["ReactJS", "ChakraUI", "Appwrite", "Vercel", "JavaScript"],
+            "A Social Media Application inspired by Meta Threads for android using Firebase for Database and supabase for storage. Clean and minimal design.",
+        tags: ["Java", "Firebase", "Supabase", "Android Studio", "Secure"],
         imageUrl: nextImg,
-        url: "https://shareclip.harshshah.me",
+        url: "https://github.com/Harshshah6/Threads-Clone-Android.git",
     },
     {
-        title: "AgrEvolve",
+        title: "Local FTP",
         description:
-            "A Dashboard to provide one stop solution for all agriculture related information for farmers and integrating an API",
-        tags: ["NextJS", "NodeJS", "ShadcnUI", "REST API", "Postman"],
+            "An Android Application that provides you the local FTP (File Transfer Protocol) service to share files between multiple devices on the same network.",
+        tags: ["Java", "Kotlin", "Minimal", "Android Studio", "Secure", "No Internet Required"],
         imageUrl: nextImg,
-        url: "https://github.com/shaharsh624/agrevolve",
+        url: "/local-ftp-demo",
     },
-    {
-        title: "AnswerLLM",
-        description:
-            "A Question and Answer System that can answer queries based on already learnt Question-Answers.",
-        tags: ["Google Gemini", "Langchain", "FAISS", "MongoDB", "Streamlit"],
-        imageUrl: nextImg,
-        url: "https://github.com/shaharsh624/AnswerLLM",
-    },
-    {
-        title: "WattWatch",
-        description:
-            "An innovative app that helps to monitor and manage water & electricity consumption. Developed in Smart India Hackathon.",
-        tags: ["Flutter", "Flask", "MongoDB", "Firebase", "Google Maps API"],
-        imageUrl: nextImg,
-        url: "https://github.com/shaharsh624/WattWatch",
-    },
-    {
-        title: "StockX",
-        description:
-            "A Web App that provides real-time Stock Market Data and Predictions using Machine Learning powered by News and Historical data.",
-        tags: ["HTML", "CSS", "JavaScript", "Flask", "Machine Learning"],
-        imageUrl: nextImg,
-        url: "https://github.com/shaharsh624/StockX",
-    },
+    // {
+    //     title: "AnswerLLM",
+    //     description:
+    //         "A Question and Answer System that can answer queries based on already learnt Question-Answers.",
+    //     tags: ["Google Gemini", "Langchain", "FAISS", "MongoDB", "Streamlit"],
+    //     imageUrl: nextImg,
+    //     url: "https://github.com/shaharsh624/AnswerLLM",
+    // },
+    // {
+    //     title: "WattWatch",
+    //     description:
+    //         "An innovative app that helps to monitor and manage water & electricity consumption. Developed in Smart India Hackathon.",
+    //     tags: ["Flutter", "Flask", "MongoDB", "Firebase", "Google Maps API"],
+    //     imageUrl: nextImg,
+    //     url: "https://github.com/shaharsh624/WattWatch",
+    // },
+    // {
+    //     title: "StockX",
+    //     description:
+    //         "A Web App that provides real-time Stock Market Data and Predictions using Machine Learning powered by News and Historical data.",
+    //     tags: ["HTML", "CSS", "JavaScript", "Flask", "Machine Learning"],
+    //     imageUrl: nextImg,
+    //     url: "https://github.com/shaharsh624/StockX",
+    // },
     {
         title: "ChatApp",
         description:
             "A real-time messaging app with end-to-end encryption and intrusion detection for secure, private communication.",
         tags: [
-            "ReactJS",
+            "Java",
             "Firebase",
             "Privacy",
             "Secure",
             "Intrusion Detection",
         ],
         imageUrl: nextImg,
-        url: "https://chatapp.harshshah.me",
+        url: "/chat-app-demo",
     },
 ] as const;
