@@ -19,7 +19,7 @@ function HeroSection() {
                   {icons.linkedin()}
               </div>
           </div>
-          <div className="hidden md:flex flex-1 size-full items-center justify-center -z-10">
+          <div className="hidden relative md:flex flex-1 size-full items-center justify-center -z-10">
               <OrbitingCirclesDemo />
           </div>
       </section>

@@ -9,7 +9,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 export default function Home() {
 
   return (
-    <main className="flex flex-col font-sans">
+    <main className="font-sans">
       <Navbar />
       <HeroSection />
       <AboutSection />
