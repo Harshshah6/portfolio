@@ -21,6 +21,10 @@ function Navbar() {
       id: "projects",
       label: "Projects",
     },
+    {
+      id: "contact",
+      label: "Contact",
+    },
   ];
 
   const router = useRouter()
