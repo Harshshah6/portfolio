@@ -87,6 +87,6 @@ export const projectsData = [
             "Multiplatform",
         ],
         imageUrl: nextImg,
-        url: "/chat-app-demo",
+        url: "https://github.com/Harshshah6/KotlinMultiplatform-HelloWorld.git",
     },
 ] as const;
