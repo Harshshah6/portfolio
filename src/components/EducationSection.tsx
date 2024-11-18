@@ -9,7 +9,7 @@ function EducationSection() {
         <section className='container w-screen mx-auto py-12'>
             <h1 className="text-3xl font-bold text-center mb-4 md:mb-8">Education</h1>
             <AlternateTimeline />
-            <h1 className='my-12' />
+            <h1 className='my-20' />
             {MarqueeDemo()}
         </section>
     )
@@ -27,7 +27,7 @@ const SkillsCard = ({
         <figure
             className={cn(
                 "w-fit overflow-hidden rounded-xl py-4 px-6 md:px-10",
-                "bg-secondary/10"
+                "bg-gray-100 dark:bg-white/10"
             )}
         >
             <div className="flex flex-row items-center gap-2">

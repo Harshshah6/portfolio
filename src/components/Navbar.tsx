@@ -46,7 +46,7 @@ function Navbar() {
             selectedKey={selected}
             onSelectionChange={setActiveTab}
             items={tabs}
-            className='w-fit bg-secondary rounded-md overflow-hidden'>
+            className='w-fit bg-secondary rounded-md overflow-hidden border'>
             {(item) => (
               <Tab className='w-full rounded-md overflow-hidden' key={item.id} title={item.label} />
             )}

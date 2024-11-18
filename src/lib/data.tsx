@@ -75,4 +75,18 @@ export const projectsData = [
         imageUrl: nextImg,
         url: "/chat-app-demo",
     },
+    {
+        title: "Multiplatform App",
+        description:
+            "A multiplatform Application, platform supporting like Android, IOS, Windows, MacOS, Linux. made using Kotlin Multiplatform On Android Studio.",
+        tags: [
+            "Kotlin",
+            "Firebase",
+            "Jetpack",
+            "Compose",
+            "Multiplatform",
+        ],
+        imageUrl: nextImg,
+        url: "/chat-app-demo",
+    },
 ] as const;
