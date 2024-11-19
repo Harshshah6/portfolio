@@ -27,7 +27,7 @@ export default async function handler(
         },
     });
 
-    {
+    try{
         const info = await transport.sendMail({
             from: process.env.EMAIL,
             to: process.env.EMAIL,
@@ -46,6 +46,9 @@ export default async function handler(
     
     
     
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ result: false })
     }
 }
 
