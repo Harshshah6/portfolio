@@ -37,30 +37,6 @@ export const projectsData = [
         imageUrl: nextImg,
         url: "/local-ftp-demo",
     },
-    // {
-    //     title: "AnswerLLM",
-    //     description:
-    //         "A Question and Answer System that can answer queries based on already learnt Question-Answers.",
-    //     tags: ["Google Gemini", "Langchain", "FAISS", "MongoDB", "Streamlit"],
-    //     imageUrl: nextImg,
-    //     url: "https://github.com/shaharsh624/AnswerLLM",
-    // },
-    // {
-    //     title: "WattWatch",
-    //     description:
-    //         "An innovative app that helps to monitor and manage water & electricity consumption. Developed in Smart India Hackathon.",
-    //     tags: ["Flutter", "Flask", "MongoDB", "Firebase", "Google Maps API"],
-    //     imageUrl: nextImg,
-    //     url: "https://github.com/shaharsh624/WattWatch",
-    // },
-    // {
-    //     title: "StockX",
-    //     description:
-    //         "A Web App that provides real-time Stock Market Data and Predictions using Machine Learning powered by News and Historical data.",
-    //     tags: ["HTML", "CSS", "JavaScript", "Flask", "Machine Learning"],
-    //     imageUrl: nextImg,
-    //     url: "https://github.com/shaharsh624/StockX",
-    // },
     {
         title: "ChatApp",
         description:
