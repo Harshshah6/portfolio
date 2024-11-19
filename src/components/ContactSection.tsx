@@ -1,3 +1,4 @@
+'use client'
 import { AtSign, Github, InstagramIcon, LinkedinIcon, Mail, MapPin, Phone, Sun, YoutubeIcon } from 'lucide-react'
 import React from 'react'
 import { Input } from './ui/input'
@@ -5,10 +6,35 @@ import { Label } from './ui/label'
 import { Button } from './ui/button'
 import { Textarea } from './ui/textarea'
 import Link from 'next/link'
+import { useForm } from 'react-hook-form'
+import { sendEmail } from '../../util/send-mail'
+import { Toaster, toast } from 'sonner'
+
+export type FormData = {
+    name: string
+    email: string
+    message: string
+}
 
 function ContactSection() {
+    const {
+        register,
+        handleSubmit,
+        reset
+    } = useForm<FormData>();
+
+    const onSubmit = handleSubmit(async (data) => {
+        const result = await sendEmail(data);
+        if (result) {
+            reset();
+            toast.success('Email sent successfully');
+        } else
+            toast.error('Failed to send email');
+    })
+
     return (
         <section id='contact' className='container mx-auto min-h-screen py-6 flex flex-col gap-4'>
+            <Toaster richColors/>
             <h2 className='text-3xl text-center'>Get in touch</h2>
             <div className='border flex-1 flex flex-col xl:flex-row mx-4 xl:mx-0 xl:p-20 bg-secondary/50 rounded-2xl'>
                 <div className='flex-1 flex flex-col p-6 xl:p-20 gap-10 xl:gap-0'>
@@ -41,19 +67,19 @@ function ContactSection() {
                     </div>
                 </div>
                 <div className='flex-1 flex justify-center items-center p-2 xl:p-20'>
-                    <form method="post" className='h-full flex-1 border bg-gray-100 dark:bg-white/10 p-2 xl:p-10 rounded-xl flex flex-col justify-evenly'>
+                    <form onSubmit={onSubmit} className='h-full flex-1 border bg-gray-100 dark:bg-white/10 p-2 xl:p-10 rounded-xl flex flex-col justify-evenly'>
                         <div className='flex flex-col gap-4'>
                             <div>
                                 <Label htmlFor="name">Name</Label>
-                                <Input type="text" id="name" placeholder="Name" className='mt-2 outline outline-secondary-foreground outline-1' required />
+                                <Input {...register("name")}  type="text" id="name" placeholder="Name" className='mt-2 outline outline-secondary-foreground outline-1' required />
                             </div>
                             <div>
                                 <Label htmlFor="email">Email</Label>
-                                <Input type="email" id="email" placeholder="Email" className='mt-2 outline outline-secondary-foreground outline-1' required />
+                                <Input {...register("email")} type="email" id="email" placeholder="Email" className='mt-2 outline outline-secondary-foreground outline-1' required />
                             </div>
                             <div>
                                 <Label htmlFor="text">Your Message</Label>
-                                <Textarea id="message" placeholder="" className='mt-2 outline outline-secondary-foreground outline-1 min-h-20' required />
+                                <Textarea {...register("message")} id="message" placeholder="" className='mt-2 outline outline-secondary-foreground outline-1 min-h-20' required />
                             </div>
                         </div>
                         <Button variant='default' type="submit" className="font-sans mt-6 place-self-end">Send Message</Button>
