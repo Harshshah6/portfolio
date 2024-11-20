@@ -1,6 +1,6 @@
 'use client'
-import { AtSign, Github, InstagramIcon, LinkedinIcon, Mail, MapPin, Phone, Sun, YoutubeIcon } from 'lucide-react'
-import React from 'react'
+import { AtSign, Github, InstagramIcon, LinkedinIcon, Loader2, Mail, MapPin, Phone, Sun, YoutubeIcon } from 'lucide-react'
+import React, { useState } from 'react'
 import { Input } from './ui/input'
 import { Label } from './ui/label'
 import { Button } from './ui/button'
@@ -24,17 +24,24 @@ function ContactSection() {
     } = useForm<FormData>();
 
     const onSubmit = handleSubmit(async (data) => {
+        setButtonLoading(true)
         const result = await sendEmail(data);
         if (result) {
             reset();
+            setButtonLoading(false)
             toast.success('Email sent successfully');
-        } else
+        } else{
+            setButtonLoading(false)
             toast.error('Failed to send email');
+        }
     })
+
+    const [isButtonLoading, setButtonLoading] = useState(false)
+
 
     return (
         <section id='contact' className='container mx-auto min-h-screen py-6 flex flex-col gap-4'>
-            <Toaster richColors/>
+            <Toaster richColors />
             <h2 className='text-3xl text-center'>Get in touch</h2>
             <div className='border flex-1 flex flex-col xl:flex-row mx-4 xl:mx-0 xl:p-20 bg-secondary/50 rounded-2xl'>
                 <div className='flex-1 flex flex-col p-6 xl:p-20 gap-10 xl:gap-0'>
@@ -71,7 +78,7 @@ function ContactSection() {
                         <div className='flex flex-col gap-4'>
                             <div>
                                 <Label htmlFor="name">Name</Label>
-                                <Input {...register("name")}  type="text" id="name" placeholder="Name" className='mt-2 outline outline-secondary-foreground outline-1' required />
+                                <Input {...register("name")} type="text" id="name" placeholder="Name" className='mt-2 outline outline-secondary-foreground outline-1' required />
                             </div>
                             <div>
                                 <Label htmlFor="email">Email</Label>
@@ -82,7 +89,16 @@ function ContactSection() {
                                 <Textarea {...register("message")} id="message" placeholder="" className='mt-2 outline outline-secondary-foreground outline-1 min-h-20' required />
                             </div>
                         </div>
-                        <Button variant='default' type="submit" className="font-sans mt-6 place-self-end">Send Message</Button>
+                        <Button variant='default' type="submit" disabled={isButtonLoading} className="font-sans mt-6 place-self-end">
+                            {
+                                isButtonLoading ? (
+                                    <div className='flex gap-2'>
+                                        <Loader2 />
+                                        { "Please wait.." }
+                                    </div>
+                                ) : "Send Message"
+                            }
+                        </Button>
                     </form>
                 </div>
             </div>
