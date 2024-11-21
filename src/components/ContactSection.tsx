@@ -40,7 +40,7 @@ function ContactSection() {
 
 
     return (
-        <section id='contact' className='container mx-auto min-h-screen py-6 flex flex-col gap-4'>
+        <section id='contact' className='container mx-auto min-h-[90vh] py-6 flex flex-col gap-4'>
             <Toaster richColors />
             <h2 className='text-3xl text-center'>Get in touch</h2>
             <div className='border flex-1 flex flex-col xl:flex-row mx-4 xl:mx-0 xl:p-20 bg-secondary/50 rounded-2xl'>

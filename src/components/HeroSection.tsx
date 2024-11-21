@@ -1,7 +1,9 @@
+'use client'
 import React from 'react'
 import { Button } from './ui/button'
 import { OrbitingCirclesDemo } from './OrbitingCircle'
 import Link from 'next/link'
+import { toast } from 'sonner'
 
 function HeroSection() {
     return (
@@ -11,7 +13,7 @@ function HeroSection() {
                 <h1 className="text-4xl md:text-6xl text-center">Harsh S Shah</h1>
                 <h1 className="text-2xl md:text-3xl text-foreground/90 text-center">Android App Developer</h1>
                 <div className="space-x-5 items-center justify-evenly flex">
-                    <Button variant="default" className="border text-base">Download CV</Button>
+                    <Button variant="default" className="border text-base" onClick={()=>{toast.error("Error while downloading CV")}}>Download CV</Button>
                     <Link href={"#contact"}>
                         <Button variant="secondary" className="text-base">Contact Me</Button>
                     </Link>
