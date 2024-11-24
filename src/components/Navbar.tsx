@@ -5,35 +5,48 @@ import { Tab, Tabs } from '@nextui-org/tabs'
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import ClearRoundedIcon from '@mui/icons-material/ClearRounded';
 import { useRouter } from 'next/navigation';
+import useScrollSpy from '../../hooks/useScrollSpy';
+
+const tabs = [
+  {
+    id: "home",
+    label: "Home",
+  },
+  {
+    id: "about",
+    label: "About",
+  },
+  {
+    id: "projects",
+    label: "Projects",
+  },
+  {
+    id: "contact",
+    label: "Contact",
+  },
+];
+
+export const sectionIdList: string[] = tabs.map((tab) => tab.id);
 
 function Navbar() {
 
-  const tabs = [
-    {
-      id: "home",
-      label: "Home",
-    },
-    {
-      id: "about",
-      label: "About",
-    },
-    {
-      id: "projects",
-      label: "Projects",
-    },
-    {
-      id: "contact",
-      label: "Contact",
-    },
-  ];
+  const activeLink = useScrollSpy(sectionIdList);
 
   const router = useRouter()
-  const [selected, setSelected] = useState("home");
+  const [, setSelected] = useState(activeLink);
   const setActiveTab = (key: Key) => {
     setSelected(key.toString());
-    router.push("#"+key.toString())
+    //router.push("#"+key.toString())
+    scrollToSection(key.toString())
   }
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  
+  const scrollToSection = (sectionId:string) => {
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <nav className="z-50 fixed top-0 left-0 right-0 w-screen flex items-center justify-around border border-red h-12 py-6 backdrop-blur-sm">
@@ -43,7 +56,7 @@ function Navbar() {
       <div className="hidden flex-1 md:flex flex-col items-center justify-center">
         <div className='rounded-md'>
           <Tabs aria-label="Dynamic tabs"
-            selectedKey={selected}
+            selectedKey={activeLink}
             onSelectionChange={setActiveTab}
             items={tabs}
             className='w-fit bg-secondary rounded-md overflow-hidden border'>
@@ -69,7 +82,7 @@ function Navbar() {
             </div>
             <div className="flex-1 flex justify-center">
               <Tabs aria-label="Dynamic tabs"
-                selectedKey={selected}
+                selectedKey={activeLink}
                 onSelectionChange={setActiveTab}
                 items={tabs}
                 isVertical
