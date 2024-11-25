@@ -92,7 +92,7 @@ function ContactSection() {
                         <Button variant='default' type="submit" disabled={isButtonLoading} className="font-sans mt-6 place-self-end">
                             {
                                 isButtonLoading ? (
-                                    <div className='flex gap-2'>
+                                    <div className='flex gap-2 justify-center items-center'>
                                         <Loader2 />
                                         { "Please wait.." }
                                     </div>

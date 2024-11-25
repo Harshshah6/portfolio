@@ -4,15 +4,29 @@ import { Button } from './ui/button'
 import { OrbitingCirclesDemo } from './OrbitingCircle'
 import Link from 'next/link'
 import { toast } from 'sonner'
+import { FlipWords } from './ui/flip-words'
+// import { TypewriterEffectSmooth } from './ui/typewriter-effect'
 
 function HeroSection() {
+
+    const flipWords = ["Android App Developer", "Web Developer"];
+    // const typewriterEffectWords = [{text: "Harsh S Shah"}];
+
     return (
         <section id='home' className="h-screen flex flex-row justify-center items-center container mx-auto">
             <div className="flex-1 size-full items-center justify-center flex flex-col gap-4">
-                <h1 className="text-xl md:text-2xl text-foreground/75 text-center">Hello I&apos;am</h1>
-                <h1 className="text-4xl md:text-6xl text-center">Harsh S Shah</h1>
-                <h1 className="text-2xl md:text-3xl text-foreground/90 text-center">Android App Developer</h1>
-                <div className="space-x-5 items-center justify-evenly flex">
+                <h1 className="text-xl md:text-2xl text-foreground/75 text-center ">
+                    Hello I&apos;am
+                    {/* <TypewriterEffectSmooth words={typewriterEffectWords} /> */}
+                </h1>
+                <h1 className="text-4xl md:text-6xl text-center">
+                    Harsh S Shah
+                </h1>
+                <h1 className="text-2xl md:text-3xl text-foreground/90 text-center">
+                    {/* Android App Developer */}
+                    <FlipWords words={flipWords} />{ /*<br />*/}
+                </h1>
+                <div className="mt-4 space-x-5 items-center justify-evenly flex">
                     <Button variant="default" className="border text-base" onClick={()=>{toast.error("Error while downloading CV")}}>Download CV</Button>
                     <Link href={"#contact"}>
                         <Button variant="secondary" className="text-base">Contact Me</Button>

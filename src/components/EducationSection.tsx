@@ -42,7 +42,7 @@ const SkillsCard = ({
 
 export function MarqueeDemo() {
     return (
-        <div className="relative flex  w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background">
+        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background">
             <Marquee className="[--duration:20s]">
                 {
                     firstRow.map((skill) => (

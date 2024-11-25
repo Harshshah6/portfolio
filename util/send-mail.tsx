@@ -21,8 +21,8 @@ export async function sendEmail(data: FormData): Promise<boolean> {
         return responseData.result;
         
     } catch (err:unknown) {
-        console.error('Error sending email:', err);
-        alert(`Error: ${(err as Error).message || 'Failed to send email'}`);
+        console.error(err);
+        //alert(`Error: ${(err as Error).message || 'Failed to send email'}`);
         return false;
     }
 }

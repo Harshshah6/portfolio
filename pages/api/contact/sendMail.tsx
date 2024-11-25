@@ -18,7 +18,6 @@ export default async function handler(
 
     const { name, email, message } = req.body;
 
-
     const transport = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -27,11 +26,11 @@ export default async function handler(
         },
     });
 
-    try{
+    try {
         const info = await transport.sendMail({
             from: process.env.EMAIL,
             to: process.env.EMAIL,
-            cc: email,
+            // cc: email, //send copy of email
             subject: `Message from ${name} (${email})`,
             text: message,
         })
@@ -40,12 +39,7 @@ export default async function handler(
             res.status(200).json({ result: true, messageId: info.messageId })
         else
             res.status(500).json({ result: false })
-        console.log(name, email, message);
-    
-        res.status(200).json({ result: true })
-    
-    
-    
+        
     } catch (err) {
         console.error(err);
         res.status(500).json({ result: false })
