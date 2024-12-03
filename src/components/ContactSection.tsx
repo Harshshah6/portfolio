@@ -9,6 +9,7 @@ import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { sendEmail } from '../../util/send-mail'
 import { Toaster, toast } from 'sonner'
+import { LoadingButton } from './ui/loading-button'
 
 export type FormData = {
     name: string
@@ -89,7 +90,7 @@ function ContactSection() {
                                 <Textarea {...register("message")} id="message" placeholder="" className='mt-2 outline outline-secondary-foreground outline-1 min-h-20' required />
                             </div>
                         </div>
-                        <Button variant='default' type="submit" disabled={isButtonLoading} className="font-sans mt-6 place-self-end">
+                        {/* <Button variant='default' type="submit" disabled={isButtonLoading} className="font-sans mt-6 place-self-end">
                             {
                                 isButtonLoading ? (
                                     <div className='flex gap-2 justify-center items-center'>
@@ -98,7 +99,9 @@ function ContactSection() {
                                     </div>
                                 ) : "Send Message"
                             }
-                        </Button>
+                        </Button> */}
+
+                        <LoadingButton type='submit' className="font-sans mt-6 place-self-end" loading={isButtonLoading}>{isButtonLoading?"Please wait...":"Send Message"}</LoadingButton>
                     </form>
                 </div>
             </div>
