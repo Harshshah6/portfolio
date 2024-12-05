@@ -29,6 +29,9 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning className="overflow-x-hidden w-screen scroll-smooth">
+      <head>
+        <meta name="google-site-verification" content="eK_5DTeFW1Gtp4f1mmwwZbrYvFVrmpSAYVwjGnboDIY" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-hidden max-w-screen`}
       >
