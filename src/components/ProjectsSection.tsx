@@ -12,7 +12,7 @@ function ProjectsSection() {
       <div className="p-4 md:p-0 ">
         {projectsData.map((project, index) => (
           <React.Fragment key={index}>
-            <Project {...project} />
+            <Project {...project} index={index}/>
           </React.Fragment>
         ))}
       </div>
