@@ -24,7 +24,7 @@ export const projectsData = [
     {
         title: "SaavnMp3",
         description:"A simple music player inspired by spotify and developed using the unofficial JioSaavn API. Has an lot of features like Search for an Artist, Song, Playlist, Albums. Not just search this app also provides you functionality to play the songs and view the artist info and much more.",
-        longDescription:"A simple music player inspired by spotify and developed using the unofficial JioSaavn API. Has a lot of features like Search for an Artist, Song, Playlist, Albums. Not just search this app also provides you functionality to play the songs and view the artist info and much more.\n\nFeatures:-\n\nNo Ads\nPlay tracks in background\nLatest tracks available\nSearch for Artists\nSearch for Tracks\nSearch for Albums\nSearch for Playlists\nDoesn\'t collect any user data\nUI inspired by spotify\nmuch more...",
+        longDescription:"A simple music player inspired by spotify and developed using the unofficial JioSaavn API. Has a lot of features like Search for an Artist, Song, Playlist, Albums. Not just search this app also provides you functionality to play the songs and view the artist info and much more.\n\n## Features\r\n\r\n* No Ads\r\n* Play tracks in background\r\n* Latest tracks available\r\n* Search for Artists\r\n* Search for Tracks\r\n* Search for Albums\r\n* Search for Playlists\r\n* Doesn't collect any user data\r\n* UI inspired by spotify\r\n* much more...",
         tags: ["Java 17", "Saavn-API", "Android Studio", "Glide", "Picasso", "Gson", "OkHttp", "SwipeRefreshLayout", "Shimmer", "OverscrollDecor", "SSP & SDP"],
         imageUrl: nextImg,
         screenShots: [
@@ -43,10 +43,24 @@ export const projectsData = [
         description:
             "A Social Media Application inspired by Meta Threads for android using Firebase for Database and supabase for storage. Clean and minimal design.",
         longDescription:
-            "A Social Media Application inspired by Meta Threads for android using Firebase for Database and supabase for storage. Clean and minimal design.",
+            "A Social Media Application inspired by Meta Threads for android using Firebase for Database and supabase for storage. Clean and minimal design.\n\n## Features\r\n\r\n* Firebase capability\r\n  * Database\r\n  * Storage\r\n  * Auth\r\n* Posts Pagination\r\n* Login \/ Signup\r\n* Upload posts\r\n  * With or Without GIF \/ IMAGE\r\n* Posts\r\n  * Create\r\n  * Update\r\n  * Delete\r\n* Update Profile\r\n* Clean settings UI\r\n* Materialistic BottomSheetDrawer\r\n* Custom Made Switch UI\r\n* Comments\r\n  * Create\r\n  * Update\r\n  * Delete\r\n* Full screen IMAGE \/ GIF preview\r\n* Likes on posts system",
         tags: ["Java", "Firebase", "Supabase", "Android Studio", "Secure"],
         imageUrl: nextImg,
-        screenShots: [],
+        screenShots: [
+            "https://github.com/Harshshah6/Threads-Clone-Android/raw/master/docs/auth.jpeg",
+            "https://github.com/Harshshah6/Threads-Clone-Android/raw/master/docs/hime.jpeg",
+            "https://github.com/Harshshah6/Threads-Clone-Android/raw/master/docs/home1.jpeg",
+            "https://github.com/Harshshah6/Threads-Clone-Android/raw/master/docs/search.jpeg",
+            "https://github.com/Harshshah6/Threads-Clone-Android/raw/master/docs/create.jpeg",
+            "https://github.com/Harshshah6/Threads-Clone-Android/raw/master/docs/create1.jpeg",
+            "https://github.com/Harshshah6/Threads-Clone-Android/raw/master/docs/comments.jpeg",
+            "https://github.com/Harshshah6/Threads-Clone-Android/raw/master/docs/activity.jpeg",
+            "https://github.com/Harshshah6/Threads-Clone-Android/raw/master/docs/profile.jpeg",
+            "https://github.com/Harshshah6/Threads-Clone-Android/raw/master/docs/update_profile.jpeg",
+            "https://github.com/Harshshah6/Threads-Clone-Android/raw/master/docs/settings.jpeg",
+            "https://github.com/Harshshah6/Threads-Clone-Android/raw/master/docs/settings1.jpeg",
+            "https://github.com/Harshshah6/Threads-Clone-Android/raw/master/docs/bottomsheet.jpeg",
+        ],
         liveUrl:"",
         url: "https://github.com/Harshshah6/Threads-Clone-Android.git",
     },

@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import { Image } from "antd";
 import { projectsData } from "@/lib/data";
 import { useRouter } from "next/navigation";
+import ReactMarkdown from 'react-markdown';
 
 function Page({ params }: { params: Promise<{ id: number }> }) {
   const [projectId, setprojectId] = useState(-1);
@@ -76,7 +77,7 @@ function Page({ params }: { params: Promise<{ id: number }> }) {
         </div>
 
         <h1 className="mt-8 text-3xl font-bold">Screenshots</h1>
-        <div className="flex gap-8 items-center flex-wrap mt-2">
+        <div className="flex gap-4 items-center flex-wrap mt-2">
           {imageData.length == 0 ? (
             <>No Screenshots :(</>
           ) : (
@@ -88,7 +89,7 @@ function Page({ params }: { params: Promise<{ id: number }> }) {
                     <Loader2 className="mr-2 h-5 w-5 animate-spin" />
                   }
                   src={item}
-                  className="cursor-pointer flex-auto hover:scale-105 transition duration-300 w-min max-h-[45vh] object-contain aspect-auto rounded-md"
+                  className="border cursor-pointer flex-auto hover:scale-105 transition duration-300 w-min max-h-[45vh] object-contain aspect-auto rounded-md"
                   alt=""
                 />
               ))}
@@ -98,14 +99,30 @@ function Page({ params }: { params: Promise<{ id: number }> }) {
 
         <div className="mt-8">
           <h1 className="mt-8 text-3xl font-bold">About This Project</h1>
-          <p className="text-primary/70">
+          {/* <p className="text-primary/70">
             {projectData.longDescription.split("\n").map((line, index) => (
               <React.Fragment key={index}>
                 {line}
                 <br />
               </React.Fragment>
             ))}
-          </p>
+          </p> */}
+
+          <ReactMarkdown className="text-primary/70"
+            components={
+              {
+                h1:(props)=>(<h1 className="text-3xl font-bold mt-4" {...props}/>),
+                h2:(props)=>(<h2 className="text-2xl font-bold mt-2 mb-1" {...props}/>),
+                p:(props)=>(<p className="text-xl text-primary/70" {...props}/>),
+                ul:(props)=>(<ul className="pl-8" {...props}/>),
+                ol:(props)=>(<ul className="pl-8" {...props}/>),
+                li:(props)=>(<li className="list-disc list-outside" {...props}/>),
+                a:(props)=>(<a className="text-blue-500 underline cursor-pointer" {...props}/>),
+              }
+            }
+          >
+            {projectData.longDescription}
+          </ReactMarkdown>
 
           <h1 className="text-3xl font-bold mt-8">Built with</h1>
           <div className="mt-4 flex flex-wrap gap-4">
