@@ -26,7 +26,7 @@ export const projectsData = [
         description:"A simple music player inspired by spotify and developed using the unofficial JioSaavn API. Has an lot of features like Search for an Artist, Song, Playlist, Albums. Not just search this app also provides you functionality to play the songs and view the artist info and much more.",
         longDescription:"A simple music player inspired by spotify and developed using the unofficial JioSaavn API. Has a lot of features like Search for an Artist, Song, Playlist, Albums. Not just search this app also provides you functionality to play the songs and view the artist info and much more.\n\n## Features\r\n\r\n* No Ads\r\n* Play tracks in background\r\n* Latest tracks available\r\n* Search for Artists\r\n* Search for Tracks\r\n* Search for Albums\r\n* Search for Playlists\r\n* Doesn't collect any user data\r\n* UI inspired by spotify\r\n* much more...",
         tags: ["Java 17", "Saavn-API", "Android Studio", "Glide", "Picasso", "Gson", "OkHttp", "SwipeRefreshLayout", "Shimmer", "OverscrollDecor", "SSP & SDP"],
-        imageUrl: nextImg,
+        imageUrl: nextImg.src,
         screenShots: [
             "https://github.com/Harshshah6/SaavnMp3-Android/raw/master/docs/home.png",
             "https://github.com/Harshshah6/SaavnMp3-Android/raw/master/docs/artists.png",
@@ -45,7 +45,7 @@ export const projectsData = [
         longDescription:
             "A Social Media Application inspired by Meta Threads for android using Firebase for Database and supabase for storage. Clean and minimal design.\n\n## Features\r\n\r\n* Firebase capability\r\n  * Database\r\n  * Storage\r\n  * Auth\r\n* Posts Pagination\r\n* Login \/ Signup\r\n* Upload posts\r\n  * With or Without GIF \/ IMAGE\r\n* Posts\r\n  * Create\r\n  * Update\r\n  * Delete\r\n* Update Profile\r\n* Clean settings UI\r\n* Materialistic BottomSheetDrawer\r\n* Custom Made Switch UI\r\n* Comments\r\n  * Create\r\n  * Update\r\n  * Delete\r\n* Full screen IMAGE \/ GIF preview\r\n* Likes on posts system",
         tags: ["Java", "Firebase", "Supabase", "Android Studio", "Secure"],
-        imageUrl: nextImg,
+        imageUrl: nextImg.src,
         screenShots: [
             "https://github.com/Harshshah6/Threads-Clone-Android/raw/master/docs/auth.jpeg",
             "https://github.com/Harshshah6/Threads-Clone-Android/raw/master/docs/hime.jpeg",
@@ -65,15 +65,15 @@ export const projectsData = [
         url: "https://github.com/Harshshah6/Threads-Clone-Android.git",
     },
     {
-        title: "Local FTP",
+        title: "Firebase Pagination + Offline",
         description:
-            "An Android Application that provides you the local FTP (File Transfer Protocol) service to share files between multiple devices on the same network.",
-        tags: ["Java", "Kotlin", "Minimal", "Android Studio", "Secure", "No Internet Required"],
+            "A simple android application that demonstrates the use of Firebase Realtime Database with Pagination and Offline Capability. This app is a simple example of how to use Firebase Realtime Database with Pagination and Offline Capability in Android Studio using Java and Kotlin.",
+        tags: ["Java", "Kotlin", "Android Studio", "Offline", "No Internet Required", "Firebase"],
         imageUrl: nextImg,
         screenShots: [],
         liveUrl:"",
-        longDescription:"",
-        url: "/local-ftp-demo",
+        longDescription:"A simple android application that demonstrates the use of Firebase Realtime Database with Pagination and Offline Capability. This app is a simple example of how to use Firebase Realtime Database with Pagination and Offline Capability in Android Studio using Java and Kotlin.\n\n## Features\r\n\r\n* Firebase Realtime Database\r\n* Pagination\r\n* Offline Capability\r\n* No Internet Required\r\n* Java & Kotlin\r\n* Template for Firebase Pagination & Offline Capability\r\n* Example Project",
+        url: "https://github.com/harshshah6/Firebase-Pagination-OfflineCapability",
     },
     {
         title: "ChatApp",

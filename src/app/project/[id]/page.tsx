@@ -42,12 +42,13 @@ function Page({ params }: { params: Promise<{ id: number }> }) {
   const chipsData = projectData.tags;
 
   return (
-    <main className="w-screen min-h-screen font-sans container m-auto overflow-x-hidden">
+    <main className="w-screen h-fit font-sans container m-auto overflow-x-hidden">
       <div className="container m-auto p-4">
         <ArrowLeft
           className="cursor-pointer size-8"
           onClick={() => {
-            router.back();
+            if(window.history.length>1) router.back();
+            else router.push("/");
           }}
         />
         <div className="mt-4">
