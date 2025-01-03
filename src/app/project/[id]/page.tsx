@@ -1,6 +1,11 @@
 "use client";
-import { ArrowLeft, Download, ExternalLink, Github, Loader2 } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import {
+  ArrowLeft,
+  Download,
+  ExternalLink,
+  Github,
+  Loader2,
+} from "lucide-react";
 // import Image from 'next/image'
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -8,30 +13,16 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Image } from "antd";
 import { projectsData } from "@/lib/data";
-import { useRouter } from "next/navigation";
-import ReactMarkdown from 'react-markdown';
+import { useParams, useRouter } from "next/navigation";
+import ReactMarkdown from "react-markdown";
+import { AnimatedGroup } from "@/components/ui/animated-group";
 
-function Page({ params }: { params: Promise<{ id: number }> }) {
-  const [projectId, setprojectId] = useState(-1);
-  const [isLoading, setisLoading] = useState(true);
+function Page() {
+  const params = useParams();
+  const projectId = (Number((params?.id)?params.id:-1));
+  // const [isLoading, setisLoading] = useState(true);
 
   const router = useRouter();
-
-  useEffect(() => {
-    async function fetch() {
-      const projectId = (await params).id;
-      setprojectId(projectId);
-      setisLoading(false);
-    }
-    fetch();
-  });
-
-  if (isLoading)
-    return (
-      <main className="w-screen h-screen flex items-center justify-center">
-        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-      </main>
-    );
 
   if (projectId < 0 || projectId >= projectsData.length) return notFound();
 
@@ -42,12 +33,12 @@ function Page({ params }: { params: Promise<{ id: number }> }) {
   const chipsData = projectData.tags;
 
   return (
-    <main className="w-screen h-fit font-sans container m-auto overflow-x-hidden">
+    <main className="w-screen h-min font-sans container m-auto overflow-x-hidden">
       <div className="container m-auto p-4">
         <ArrowLeft
           className="cursor-pointer size-8"
           onClick={() => {
-            if(window.history.length>1) router.back();
+            if (window.history.length > 1) router.back();
             else router.push("/");
           }}
         />
@@ -67,7 +58,15 @@ function Page({ params }: { params: Promise<{ id: number }> }) {
         <div className="w-fit mt-4 gap-3 items-center justify-evenly flex flex-wrap">
           <Link href={projectData.liveUrl} target="_blank">
             <Button variant="default" className="border text-base">
-              {projectData.liveUrl.includes("apk")?(<><Download /> Download APK</>):(<><ExternalLink/> View live</>)}
+              {projectData.liveUrl.includes("apk") ? (
+                <>
+                  <Download /> Download APK
+                </>
+              ) : (
+                <>
+                  <ExternalLink /> View live
+                </>
+              )}
             </Button>
           </Link>
           <Link href={projectData.url} target="_blank">
@@ -83,17 +82,45 @@ function Page({ params }: { params: Promise<{ id: number }> }) {
             <>No Screenshots :(</>
           ) : (
             <Image.PreviewGroup>
-              {imageData.map((item, index) => (
-                <Image
-                  key={index}
-                  placeholder={
-                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                  }
-                  src={item}
-                  className="border cursor-pointer flex-auto hover:scale-105 transition duration-300 w-min max-h-[45vh] object-contain aspect-auto rounded-md"
-                  alt=""
-                />
-              ))}
+              <AnimatedGroup
+                className="flex gap-4 items-center flex-wrap mt-2"
+                variants={{
+                  container: {
+                    hidden: { opacity: 0 },
+                    visible: {
+                      opacity: 1,
+                      transition: {
+                        staggerChildren: 0.05,
+                      },
+                    },
+                  },
+                  item: {
+                    hidden: { opacity: 0, y: 40, filter: "blur(4px)" },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      filter: "blur(0px)",
+                      transition: {
+                        duration: 1.2,
+                        type: "spring",
+                        bounce: 0.3,
+                      },
+                    },
+                  },
+                }}
+              >
+                {imageData.map((item, index) => (
+                  <Image
+                    key={index}
+                    placeholder={
+                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                    }
+                    src={item}
+                    className="border cursor-pointer flex-auto hover:scale-105 transition duration-300 w-min max-h-[45vh] object-contain aspect-auto rounded-md"
+                    alt=""
+                  />
+                ))}
+              </AnimatedGroup>
             </Image.PreviewGroup>
           )}
         </div>
@@ -109,18 +136,30 @@ function Page({ params }: { params: Promise<{ id: number }> }) {
             ))}
           </p> */}
 
-          <ReactMarkdown className="text-primary/70"
-            components={
-              {
-                h1:(props)=>(<h1 className="text-3xl font-bold mt-4" {...props}/>),
-                h2:(props)=>(<h2 className="text-2xl font-bold mt-2 mb-1" {...props}/>),
-                p:(props)=>(<p className="text-xl text-primary/70" {...props}/>),
-                ul:(props)=>(<ul className="pl-8" {...props}/>),
-                ol:(props)=>(<ul className="pl-8" {...props}/>),
-                li:(props)=>(<li className="list-disc list-outside" {...props}/>),
-                a:(props)=>(<a className="text-blue-500 underline cursor-pointer" {...props}/>),
-              }
-            }
+          <ReactMarkdown
+            className="text-primary/70"
+            components={{
+              h1: (props) => (
+                <h1 className="text-3xl font-bold mt-4" {...props} />
+              ),
+              h2: (props) => (
+                <h2 className="text-2xl font-bold mt-2 mb-1" {...props} />
+              ),
+              p: (props) => (
+                <p className="text-xl text-primary/70" {...props} />
+              ),
+              ul: (props) => <ul className="pl-8" {...props} />,
+              ol: (props) => <ul className="pl-8" {...props} />,
+              li: (props) => (
+                <li className="list-disc list-outside" {...props} />
+              ),
+              a: (props) => (
+                <a
+                  className="text-blue-500 underline cursor-pointer"
+                  {...props}
+                />
+              ),
+            }}
           >
             {projectData.longDescription}
           </ReactMarkdown>
