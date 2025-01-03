@@ -36,7 +36,7 @@ export const projectsData = [
             "https://github.com/Harshshah6/SaavnMp3-Android/raw/master/docs/notification.png",
         ],
         liveUrl:"https://github.com/Harshshah6/SaavnMp3-Android/raw/refs/heads/master/app/release/app-release.apk",
-        url: "https://github.com/Harshshah6/Threads-Clone-Android.git",
+        url: "https://github.com/Harshshah6/SaavnMp3-Android",
     },
     {
         title: "Social Media App",
