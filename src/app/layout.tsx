@@ -40,7 +40,7 @@ export default function RootLayout({
           attribute="class"
           enableSystem
         >
-          <Particles className="absolute inset-0 -z-10 animate-fade-in w-screen" />
+          <Particles className="absolute inset-0 h-screen -z-10 animate-fade-in w-screen" />
           {children}
         </ThemeProvider>
       </body>

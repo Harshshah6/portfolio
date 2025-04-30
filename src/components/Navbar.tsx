@@ -16,10 +16,10 @@ const tabs = [
     id: "about",
     label: "About",
   },
-  {
-    id: "projects",
-    label: "Projects",
-  },
+  // {
+  //   id: "projects",
+  //   label: "Projects",
+  // },
   {
     id: "contact",
     label: "Contact",
