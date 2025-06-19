@@ -1,19 +1,11 @@
-import AboutSection from "@/components/AboutSection";
-import ContactSection from "@/components/ContactSection";
-import EducationSection from "@/components/EducationSection";
-import Footer from "@/components/Footer";
-import HeroSection from "@/components/HeroSection";
+import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 
-export default function Home() {
+export default function Page() {
   return (
-    <main className="font-sans">
+    <main className="p-3 container mx-auto min-h-screen">
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <EducationSection />
-      <ContactSection />
-      <Footer/>
+      <Hero />
     </main>
   );
 }
