@@ -5,12 +5,12 @@ import ThemeToggleButton from './ui/ThemeToggleButton';
 
 export default function Navbar() {
   return (
-    <nav className='bg-background z-10 border rounded px-6 py-3 flex flex-col md:flex-row items-center justify-between mb-7 sticky top-5'>
+    <nav className='bg-card shadow z-10 border rounded px-6 py-3 flex flex-col md:flex-row items-center justify-between mb-7 sticky top-5'>
       <div className='flex gap-3'>
-        <div className='size-10 border rounded-full bg-border'></div>
+        <div className='size-10 border rounded-full bg-accent'></div>
         <Link
           href={"https://github.com/harshshah6"}
-          className='border rounded p-2 transition-colors duration-300 font-medium hover:bg-muted/50'
+          className='border rounded p-2 transition-colors duration-300 font-medium hover:bg-accent/50'
           target='_blank'
         >
           @HarshShah6
@@ -44,7 +44,7 @@ type NavItemProps = React.ComponentProps<typeof Link> & {
 
 function NavItem({ text, Icon, ...props }: NavItemProps) {
   return (
-    <Link {...props} className={`rounded p-2 transition-colors duration-300 cursor-pointer hover:bg-muted/50 flex items-center gap-2 ${props.className ?? ''}`}>
+    <Link {...props} className={`rounded p-2 transition-colors duration-300 cursor-pointer hover:bg-primary/10 flex items-center gap-2 ${props.className ?? ''}`}>
       {React.cloneElement(Icon, { ...Icon.props, className: `${Icon.props.className ?? ''} size-5` })}
       {text}
     </Link>
