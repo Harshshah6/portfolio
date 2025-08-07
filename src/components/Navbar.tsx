@@ -2,12 +2,19 @@ import { BriefcaseBusiness, Home, Mail } from 'lucide-react';
 import Link from 'next/link'
 import React from 'react'
 import ThemeToggleButton from './ui/ThemeToggleButton';
+import Image from 'next/image';
 
 export default function Navbar() {
   return (
     <nav className='bg-card shadow z-10 border rounded px-6 py-3 flex flex-col md:flex-row items-center justify-between mb-7 sticky top-5'>
       <div className='flex gap-3'>
-        <div className='size-10 border rounded-full bg-accent'></div>
+        <div className='size-10 border rounded-full bg-accent relative overflow-hidden'>
+          <Image
+            src={"https://avatars.githubusercontent.com/u/69447184?v=4"}
+            alt='profile_image'
+            fill
+          />
+        </div>
         <Link
           href={"https://github.com/harshshah6"}
           className='border rounded p-2 transition-colors duration-300 font-medium hover:bg-accent/50'
@@ -25,12 +32,12 @@ export default function Navbar() {
         <NavItem
           Icon={<BriefcaseBusiness />}
           text="Projects"
-          href="#"
+          href="#projects"
         />
         <NavItem
           Icon={<Mail />}
           text="Contact"
-          href="#"
+          href="#contact"
         />
         <ThemeToggleButton />
       </div>

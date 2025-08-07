@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Harsh S Shah",
@@ -13,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="scroll-smooth" data-scroll-behavior="smooth">
       <body
         className={`antialiased`}
       >
@@ -22,6 +23,7 @@ export default function RootLayout({
           defaultTheme="dark"
           enableSystem
         >
+          <Toaster />
           {children}
         </ThemeProvider>
       </body>
