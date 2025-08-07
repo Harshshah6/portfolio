@@ -6,7 +6,10 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       new URL("https://avatars.githubusercontent.com/u/69447184?v=4"),
     ],
-  }
+  },
+  output: "export",
+  distDir:"dist",
+  
 };
 
 export default nextConfig;
